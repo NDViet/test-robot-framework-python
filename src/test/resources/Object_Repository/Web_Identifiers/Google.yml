@@ -1,0 +1,4 @@
+Google:
+  searchScreen:
+    confirmClose: //button[2]
+    button: id=submitBtn

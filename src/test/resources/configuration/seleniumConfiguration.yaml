@@ -1,6 +1,11 @@
+testObjectRepository:
+  directory: src/test/resources/Object_Repository
+webElementIdentifiers:
+  directory: src/test/resources/Object_Repository/Web_Identifiers
+
 selenium:
   web_driver:
-    target: remote
+    target: local
   screenshot:
     fileType: "png"
   enableTracing: false
@@ -12,8 +17,8 @@ selenium:
     type: chrome
     chrome:
       prefs:
-        se:recordVideo: true
-        se:screenResolution: "1920x1080"
+#        se:recordVideo: true
+#        se:screenResolution: "1920x1080"
       args:
         - "start-maximized"
         - "--incognito"
@@ -24,6 +29,9 @@ selenium:
         - "enable-automation"
         - "--verbose"
         #- "--proxy-server=10.10.10.10:8080"
+    edge:
+      prefs:
+      args:
     firefox:
       args:
         - "--ignore-certificate-errors"

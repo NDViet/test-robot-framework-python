@@ -1,2 +1,2 @@
 *** Settings ***
-Library           org.ndviet.keyword.WebUI    WITH NAME    WebUI
+Library           ndviet_test_automation.web.src.webui.WebUI    WITH NAME    WebUI

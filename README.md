@@ -2,51 +2,46 @@
 
 ## Introduction
 
-Test repository with test case is created and executed in Robot Framework.<br>
+Test repository with test case is created and executed in Robot Framework with import external libraries Python-based.
 
 ## List dependency repositories
 
-1. [test-parent-pom](../../../test-parent-pom)
-2. [test-automation-fwk](../../../test-automation-fwk)
-3. [test-java2robot-adapter](../../../test-java2robot-adapter)
+1. [test-automation-fwk-python](../../../test-automation-fwk-python)
 
 ## Source code usage
 
-1. Clone repository "test-parent-pom" (**mandatory**)
+1. Clone repository "test-automation-fwk-python" (**mandatory**)
 
 ```shell
-git clone git@github.com:ndviet/test-parent-pom.git
+git clone git@github.com:ndviet/test-automation-fwk-python.git
 ```
 
 2. Clone this test repository to the same directory
 
 ```shell
-git clone git@github.com:ndviet/test-robot-framework.git
+git clone git@github.com:ndviet/test-robot-framework-python.git
 ```
 
-3. Build source code in each repository following the order
-
-- test-parent-pom
-- test-robot-framework
+3. Build test libraries in repository `test-automation-fwk-python` (Refer to build steps mentioned in that repository)
 
 4. Run test cases in test repository
 
 ```shell
-cd test-robot-framework
+cd test-robot-framework-python
 ```
 
-```shell
-mvn initialize robotframework:run -Dincludes=EasyUpload -Dselenium.browser.type=chrome
+Activate virtualenv where test library is installed in repo `test-automation-fwk-python`
+
+```bash
+../test-automation-fwk-python/.venv/Scripts/activate
 ```
 
-Noted:
-
-* **[includes]** property is used to provide Robot Test Tags would be executed.
-* List of configuration can be input from CLI can be referred to [pom.xml](./pom.xml) or layered configuration
-  files in [src/test/resources/configuration](src/test/resources/configuration)
+```bash
+robot --include session3 --outputdir reports --variable configuration_base:src/test/resources/configuration/seleniumConfiguration.yaml ./
+```
 
 ## Reference
 
-A sample project with entire repositories together for the test execution.<br>
+Another sample project with using the shared test library implemented in `test-automation-fwk-python`
 
-* [test-automation-project](../../../test-automation-project)
+[demo-robot-fwk](../../../demo-robot-fwk)
